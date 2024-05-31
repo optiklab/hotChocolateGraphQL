@@ -11,8 +11,8 @@ namespace ConferencePlanner.GraphQL
             where TDbContext : DbContext
         {
             return descriptor.UseScopedService<TDbContext>(
-                create: s => s.GetRequiredService<IDbContextFactory<TDbContext>>().CreateDbContext(),
-                disposeAsync: (s, c) => c.DisposeAsync());
+                create: s => s.GetRequiredService<IDbContextFactory<TDbContext>>().CreateDbContext());
+                //disposeAsync: (s, c) => c.DisposeAsync());
         }
 
         public static IObjectFieldDescriptor UseUpperCase(

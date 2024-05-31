@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace ConferencePlanner.GraphQL.Speakers
 {
-    [ExtendObjectType(Name = "Query")]
+    [ExtendObjectType("Query")]
     public class SpeakerQueries
     {
         [UseApplicationDbContext]
