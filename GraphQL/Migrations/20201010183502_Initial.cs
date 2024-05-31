@@ -1,13 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-#nullable disable
-
 namespace GraphQL.Migrations
 {
-    /// <inheritdoc />
     public partial class Initial : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -17,8 +13,8 @@ namespace GraphQL.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
-                    Bio = table.Column<string>(type: "TEXT", maxLength: 4000, nullable: false),
-                    WebSite = table.Column<string>(type: "TEXT", maxLength: 1000, nullable: false)
+                    Bio = table.Column<string>(type: "TEXT", maxLength: 4000, nullable: true),
+                    WebSite = table.Column<string>(type: "TEXT", maxLength: 1000, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -26,7 +22,6 @@ namespace GraphQL.Migrations
                 });
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
